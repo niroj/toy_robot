@@ -11,6 +11,8 @@ class Table
   end
 
   def is_valid_coordinates?(x, y)
+    x = x.to_i
+    y = y.to_i
     !x.negative? && x < row && !y.negative? && y < column
   end
 end

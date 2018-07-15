@@ -111,7 +111,7 @@ class RobotTest < Minitest::Test
   end
 
   def test_left_turns_robot_in_anti_clockwise_direction
-    @robot
+    @robot.place(0, 0, 'NORTH')
     assert_equal @robot.direction, 'NORTH'
 
     @robot.left
@@ -119,7 +119,7 @@ class RobotTest < Minitest::Test
   end
 
   def test_right_turns_robot_in_clockwise_direction
-    @robot
+    @robot.place(0, 0, 'NORTH')
     assert_equal @robot.direction, 'NORTH'
 
     @robot.right
@@ -127,7 +127,7 @@ class RobotTest < Minitest::Test
   end
 
   def test_report_returns_current_position_of_robot
-    @robot
+    @robot.place(0, 0, 'NORTH')
     assert_equal @robot.report, '0,0,NORTH'
 
     @robot.place(3, 4, 'SOUTH')
