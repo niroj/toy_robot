@@ -1,3 +1,7 @@
+# Responsible for passing commands to robot
+#
+# Author:: Niroj Shrstha (mailto:nexus.niroj@gmail.com)
+#
 require './lib/models/table'
 require './lib/models/robot'
 
@@ -8,6 +12,11 @@ class Robots
     @robot = Robot.new(Table.new(row: table_row, column: table_col))
   end
 
+  # Calls command against robot instance
+  # Params:
+  # +command+:: command to execute
+  #
+  # Returns: current position<string> if command is report else nil<nil>
   def execute(command)
     return 'Not Placed' unless place_command?(command) || @robot.placed
     command, args = command.split(' ')
@@ -18,6 +27,10 @@ class Robots
     result if report_command?(command)
   end
 
+
+  # parses command file and calls each valid line against robot instance
+  # Params:
+  # +command+:: command to execute
   def execute_file(file)
     commands = File.read(file).split("\n")
     output = []
@@ -32,10 +45,16 @@ class Robots
     output
   end
 
+  # Checks if command is place command
+  # Params:
+  # +command+:: command to test
   def place_command?(command)
     !!(command =~ /^place/i)
   end
 
+  # Checks if command is report command
+  # Params:
+  # +command+:: command to test
   def report_command?(command)
     !!(command =~ /^report/i)
   end

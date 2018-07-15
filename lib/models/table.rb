@@ -1,4 +1,4 @@
-# Responsible for the table
+# Responsible for the table, and its constraints
 #
 # Author:: Niroj Shrstha (mailto:nexus.niroj@gmail.com)
 #
@@ -10,6 +10,10 @@ class Table
     @column = (column || 5).to_i
   end
 
+  # checks if give coordinate is within the constraints of table
+  # Params:
+  # +x+:: position in x axis
+  # +y+:: position in y axis
   def is_valid_coordinates?(x, y)
     x = x.to_i
     y = y.to_i
