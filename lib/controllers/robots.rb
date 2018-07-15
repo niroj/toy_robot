@@ -4,8 +4,8 @@ require './lib/models/robot'
 class Robots
   VALID_COMMANDS = [ :place, :move, :left, :right, :report ]
 
-  def initialize(table_x: nil, table_y: nil)
-    @robot = Robot.new(Table.new(row: table_x, column: table_y))
+  def initialize(table_row: nil, table_col: nil)
+    @robot = Robot.new(Table.new(row: table_row, column: table_col))
   end
 
   def execute(command)
