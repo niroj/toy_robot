@@ -1,0 +1,3 @@
+task :tests do
+  Dir.glob('./tests/*/*.rb') { |file| require file }
+end
