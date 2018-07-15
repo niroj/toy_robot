@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './lib/table'
+require './lib/models/table'
 
 class TableTest < Minitest::Test
   def setup

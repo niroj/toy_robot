@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './lib/robot'
+require './lib/models/robot'
 
 class RobotTest < Minitest::Test
   def setup

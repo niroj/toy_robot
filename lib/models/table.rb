@@ -5,9 +5,9 @@
 class Table
   attr_reader :row, :column
 
-  def initialize(row = 5, column = 5)
-    @row = row.to_i
-    @column = column.to_i
+  def initialize(row: nil, column: nil)
+    @row = row || 5
+    @column = column || 5
   end
 
   def is_valid_coordinates?(x, y)
